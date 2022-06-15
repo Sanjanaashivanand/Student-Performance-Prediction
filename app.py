@@ -1,8 +1,6 @@
-from flask import Flask, render_template, request, jsonify
-from matplotlib.pyplot import get
+from flask import Flask, render_template, request
 import pandas as pd
 import pickle
-import csv
 import os
 
 
@@ -22,7 +20,7 @@ def getResults(X_test):
         res = X_test[['usn', 'Grades']]
         return res.to_html(header="true", table_id="table")
     except:
-        return "The file is not valid"
+        return "<h1>The file is not valid</h1>"
 
 
 app = Flask(__name__)
